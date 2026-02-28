@@ -1,6 +1,6 @@
 import type { Admin } from "../interfaces/auth.inteface";
 
-export const FAIR_API_BASE = 'http://localhost:3000';
+export const FAIR_API_BASE = 'http://64.23.187.211:3000';
 
 export interface LoginResponse {
     message: string;

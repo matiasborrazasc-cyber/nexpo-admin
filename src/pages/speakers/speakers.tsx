@@ -13,7 +13,7 @@ function Speakers() {
 
     const navigate = useNavigate();
     const [speakers, setSpeakers] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [search, setSearch] = useState('');
 

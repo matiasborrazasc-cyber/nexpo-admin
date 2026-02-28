@@ -10,7 +10,7 @@ import { QUANTITY_RESULTS } from '../../enums/quantity-results.enum';
 function Clients() {
     const { t } = useTranslation();
     const [clients, setClients] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [search, setSearch] = useState('');
 

@@ -102,7 +102,7 @@ function ViewInfluencers() {
                                     <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
                                     <XAxis dataKey="date" tick={{ fontSize: 11 }} tickFormatter={(v) => v.slice(5)} />
                                     <YAxis tick={{ fontSize: 11 }} allowDecimals={false} />
-                                    <Tooltip formatter={(v: number) => [v, 'Visitas']} labelFormatter={(v) => `Fecha: ${v}`} />
+                                    <Tooltip formatter={(v) => [v ?? 0, 'Visitas']} labelFormatter={(v) => `Fecha: ${v}`} />
                                     <Area type="monotone" dataKey="count" stroke="#2563eb" strokeWidth={2} fillOpacity={1} fill="url(#colorVisitasView)" />
                                 </AreaChart>
                             </ResponsiveContainer>

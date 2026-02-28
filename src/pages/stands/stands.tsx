@@ -12,7 +12,7 @@ function Stands() {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [stands, setStands] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [search, setSearch] = useState('');
 
