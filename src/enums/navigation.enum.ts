@@ -1,0 +1,15 @@
+export enum NAVIGATION {
+    HOME = '',
+    SALES = 'sales',
+    CLIENTS = 'clients',
+    STANDS = 'stands',
+    SETTINGS = 'settings',
+    BLOG = 'blog',
+    BANNERS = 'banners',
+    EVENTS = 'events',
+    INFLUENCERS = 'influencers',
+    GIVEAWAY = 'giveaway',
+    SPONSORS = 'sponsors',
+    CUPONS = 'cupons',
+    SPEAKERS = 'speakers',
+}

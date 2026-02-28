@@ -1,0 +1,420 @@
+/* ---------- Detalle stand: coherente con el admin, con toque novedoso ---------- */
+.stand-detail.container-form {
+    max-width: 720px;
+    padding: 32px 24px 48px;
+}
+
+.stand-detail-loading {
+    padding: 32px 24px;
+    color: #374151;
+    font-size: 16px;
+}
+
+.stand-detail-error {
+    margin-top: 16px;
+}
+
+/* Acciones: mismo estilo que filtros del admin */
+.stand-detail-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 720px;
+}
+
+.stand-detail-btn-back,
+.stand-detail-btn-edit {
+    background-color: #fff;
+    padding: 10px 18px;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.stand-detail-btn-back:hover,
+.stand-detail-btn-edit:hover {
+    background-color: #F0F3F7;
+}
+
+.stand-detail-btn-edit {
+    background: #eef2ff;
+    color: #3730a3;
+    border-color: #c7d2fe;
+}
+
+.stand-detail-btn-edit:hover {
+    background: #e0e7ff;
+    border-color: #a5b4fc;
+    box-shadow: 0 2px 8px rgba(55, 48, 163, 0.12);
+}
+
+/* Hero: imagen + badges + descripción (novedoso pero mismo lenguaje visual) */
+.stand-detail-hero.form-card {
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stand-detail-hero-content {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.stand-detail-hero-image {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+
+.stand-detail-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.stand-detail-hero-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.stand-detail-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.stand-detail-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #3730a3;
+    background: #eef2ff;
+    border-radius: 999px;
+    border: 1px solid #c7d2fe;
+}
+
+.stand-detail-desc {
+    margin: 0;
+    font-size: 15px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* Secciones: título con barra de acento (azul del admin) */
+.stand-detail-info.form-card,
+.stand-detail-products.form-card {
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.stand-detail-section-title {
+    margin: 0 0 20px 0;
+    padding-left: 12px;
+    border-left: 4px solid #2AA5FF;
+    font-size: 15px;
+    font-weight: 600;
+    color: #374151;
+    line-height: 1.3;
+}
+
+/* Campos en filas claras */
+.stand-detail-fields {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.stand-detail-field {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.stand-detail-field:last-child {
+    border-bottom: 0;
+}
+
+.stand-detail-fields dt {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.stand-detail-fields dd {
+    margin: 0;
+    font-size: 14px;
+    color: #111827;
+}
+
+.stand-detail-fields a {
+    color: #1d4ed8;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.stand-detail-fields a:hover {
+    color: #2AA5FF;
+    text-decoration: underline;
+}
+
+/* Bloque Productos: “próximamente” con borde punteado y badge */
+.stand-detail-products.form-card {
+    width: 100%;
+    max-width: 720px;
+    margin-bottom: 24px;
+}
+
+.stand-detail-products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.stand-detail-btn-add {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    background: #3730a3;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stand-detail-btn-add:hover {
+    background: #4f46e5;
+}
+
+.stand-detail-products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stand-detail-product-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    background: #f9fafb;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+}
+
+.stand-detail-product-thumb {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #e5e7eb;
+}
+
+.stand-detail-product-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stand-detail-product-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stand-detail-product-desc {
+    font-size: 13px;
+    color: #6b7280;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.stand-detail-product-price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.stand-detail-product-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.stand-detail-btn-edit-sm,
+.stand-detail-btn-delete {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.stand-detail-btn-edit-sm {
+    background: #eef2ff;
+    color: #3730a3;
+}
+
+.stand-detail-btn-edit-sm:hover {
+    background: #e0e7ff;
+}
+
+.stand-detail-btn-delete {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.stand-detail-btn-delete:hover {
+    background: #fecaca;
+}
+
+.stand-detail-products-placeholder {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.stand-detail-product-form-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 24px;
+}
+
+.stand-detail-product-form {
+    background: #fff;
+    border-radius: 16px;
+    padding: 24px;
+    max-width: 440px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.stand-detail-product-form h4 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.stand-detail-product-form .container-input {
+    margin-bottom: 16px;
+}
+
+.stand-detail-product-form .container-input label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.stand-detail-product-form .container-input input,
+.stand-detail-product-form .container-input textarea,
+.stand-detail-product-form .container-input select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.stand-detail-product-form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.stand-detail-product-form-actions button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    color: #374151;
+}
+
+.stand-detail-product-form-actions .btn-primary {
+    background: #3730a3;
+    color: #fff;
+    border-color: #3730a3;
+}
+
+.stand-detail-product-form-actions .btn-primary:hover:not(:disabled) {
+    background: #4f46e5;
+}
+
+.stand-detail-product-form-actions .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive: hero en columna en pantallas pequeñas */
+@media (max-width: 560px) {
+    .stand-detail-hero-content {
+        flex-direction: column;
+    }
+
+    .stand-detail-hero-image {
+        width: 100%;
+        max-width: 200px;
+        height: 140px;
+    }
+
+    .stand-detail-field {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 12px 0;
+    }
+}

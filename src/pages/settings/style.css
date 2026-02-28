@@ -1,0 +1,105 @@
+.settings-container {
+  margin-top: 0;
+}
+
+.settings-section {
+  max-width: 520px;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.settings-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 8px 0;
+}
+
+.settings-section-desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+.settings-color-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.settings-color-input {
+  width: 56px;
+  height: 48px;
+  padding: 4px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  background: var(--color-bg-card);
+}
+
+.settings-color-input:hover {
+  border-color: var(--color-primary);
+}
+
+.settings-color-text {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 14px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+}
+
+.settings-color-text:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.settings-save-btn {
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.settings-save-btn:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+  transform: translateY(-1px);
+}
+
+.settings-save-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.settings-message {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.settings-message-success {
+  background: var(--color-success-bg);
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.settings-message-error {
+  background: var(--color-error-bg);
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
