@@ -1,0 +1,85 @@
+.support-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f0ff 0%, #fef7ff 50%, #fafafa 100%);
+  padding: 2rem 1rem;
+}
+
+.support-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.support-page h1 {
+  font-size: 1.75rem;
+  color: #1a1a2e;
+  margin-bottom: 0.5rem;
+}
+
+.support-intro {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.support-section {
+  margin-bottom: 2rem;
+}
+
+.support-section h2 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.support-section p,
+.support-section ul {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.support-section a {
+  color: #6840ff;
+  text-decoration: none;
+}
+
+.support-section a:hover {
+  text-decoration: underline;
+}
+
+.support-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.support-section li {
+  margin-bottom: 0.5rem;
+}
+
+.support-section dl {
+  margin: 0;
+}
+
+.support-section dt {
+  font-weight: 600;
+  color: #333;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.support-section dd {
+  margin-left: 0;
+  color: #555;
+  line-height: 1.5;
+}
+
+.support-footer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #888;
+}

@@ -34,6 +34,7 @@ import Events from "./pages/events/events";
 import CreateEvents from "./pages/events/createEvents";
 import EditEvents from "./pages/events/editEvents";
 import Settings from "./pages/settings/settings";
+import Support from "./pages/support/support";
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
       <Routes>
 
         <Route path="/login" element={<Login />} />
+        <Route path="/soporte" element={<Support />} />
 
         <Route
           element={
