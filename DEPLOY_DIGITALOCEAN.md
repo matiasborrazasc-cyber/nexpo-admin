@@ -122,6 +122,10 @@ server {
     root /var/www/admin-fair/dist;
     index index.html;
 
+    # Página de soporte (para App Store / Google Play)
+    location = /soporte { try_files /soporte.html =404; }
+    location = /support { try_files /soporte.html =404; }
+
     location / {
         try_files $uri $uri/ /index.html;
     }

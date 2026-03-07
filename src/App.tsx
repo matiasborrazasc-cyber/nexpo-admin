@@ -43,6 +43,7 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/soporte" element={<Support />} />
+        <Route path="/support" element={<Support />} />
 
         <Route
           element={
