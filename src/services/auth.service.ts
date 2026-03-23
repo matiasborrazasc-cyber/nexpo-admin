@@ -1,6 +1,13 @@
 import type { Admin } from "../interfaces/auth.inteface";
 
-export const FAIR_API_BASE = 'http://64.23.187.211:3000';
+/** URL de la API. Prod: https://managment.nexpo.uy. Dev: localhost. Ver .env.production */
+const envApi = import.meta.env.VITE_API_URL;
+export const FAIR_API_BASE =
+  envApi !== undefined && envApi !== ''
+    ? envApi
+    : import.meta.env.DEV
+      ? 'http://localhost:3000'
+      : '';
 
 export interface LoginResponse {
     message: string;
