@@ -58,7 +58,7 @@
 .login-form input {
   width: 100%;
   padding: 12px 16px;
-  font-size: 1rem;
+  font-size: 16px; /* Evita zoom en iOS */
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background: var(--color-bg-card);
@@ -172,6 +172,26 @@
 
 .login-language:hover {
   color: var(--color-text);
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 16px;
+    align-items: flex-start;
+    padding-top: 24px;
+  }
+
+  .login-card {
+    padding: 28px 24px;
+  }
+
+  .login-title {
+    font-size: 1.35rem;
+  }
+
+  .login-btn {
+    padding: 14px;
+  }
 }
 
 .password-wrapper {

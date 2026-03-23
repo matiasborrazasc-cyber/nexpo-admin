@@ -103,3 +103,17 @@
   color: #991b1b;
   border: 1px solid #fecaca;
 }
+
+@media (max-width: 480px) {
+  .settings-section {
+    padding: 20px 16px;
+  }
+
+  .settings-color-row {
+    flex-wrap: wrap;
+  }
+
+  .settings-color-text {
+    width: 100%;
+  }
+}

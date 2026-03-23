@@ -12,20 +12,34 @@ import {
     faHandshake,
     faNewspaper,
     faGear,
+    faXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import './style.css';
 import { NAVIGATION } from '../../enums/navigation.enum';
 import { NavLink } from "react-router-dom";
+import { useMobileNav } from '../../contexts/MobileNavContext';
 
 function Navigation() {
+    const { isOpen, close } = useMobileNav();
+
     return (
-        <div className='navigation'>
+        <>
+            <div className={`navigation-overlay ${isOpen ? 'is-open' : ''}`} onClick={close} aria-hidden="true" />
+            <div className={`navigation ${isOpen ? 'is-open' : ''}`}>
             <div className="navigation-header">
                 <span className="navigation-logo">NX</span>
                 <span className="navigation-title">Nexpo</span>
+                <button
+                    type="button"
+                    className="navigation-close"
+                    onClick={close}
+                    aria-label="Cerrar menú"
+                >
+                    <FontAwesomeIcon icon={faXmark} />
+                </button>
             </div>
 
-            <nav className="navigation-menu">
+            <nav className="navigation-menu" onClick={close}>
                 <NavLink to={NAVIGATION.HOME} className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}>
                     <span className="nav-icon">
                         <FontAwesomeIcon icon={faHouse} />
@@ -111,6 +125,7 @@ function Navigation() {
                 </NavLink>
             </nav>
         </div>
+        </>
     )
 }
 

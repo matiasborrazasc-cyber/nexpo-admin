@@ -225,11 +225,119 @@ certbot --nginx -d admin.tuferia.com
 
 ---
 
+## Dashboard en nexpo.uy y App en expobelleza.nexpo.uy
+
+Si querés tener el **dashboard** en `nexpo.uy` y la **app móvil** en `expobelleza.nexpo.uy`, ambos en el mismo Droplet:
+
+### 1. DNS en DigitalOcean
+
+En **Networking** → **Domains** → `nexpo.uy` → **Add Record**:
+
+| Type | Hostname | Value |
+|------|-----------|-------|
+| A | `expobelleza` | (la misma IP del Droplet) |
+
+Así `expobelleza.nexpo.uy` apunta al mismo servidor que `nexpo.uy`.
+
+### 2. Directorios en el servidor
+
+```bash
+# Dashboard (ya lo tenés)
+/var/www/admin-fair/dist   → nexpo-frontend (React)
+
+# App móvil (crear y subir)
+/var/www/feria-app         → feria_app/build/web (Flutter)
+```
+
+Para subir la app Flutter (repo: https://github.com/matiasborrazasc-cyber/nexpo-app):
+
+```bash
+# En tu Mac, compilar la app web
+cd nexpo-app/feria_app   # o clonar nexpo-app y entrar a feria_app
+flutter build web
+
+# Subir al servidor
+scp -r build/web/* root@TU_IP:/var/www/feria-app/
+```
+
+### 3. Nginx: dos dominios
+
+Reemplazá la config de Nginx por esta (o creá un nuevo archivo):
+
+```bash
+nano /etc/nginx/sites-available/nexpo
+```
+
+```nginx
+# Dashboard en nexpo.uy
+server {
+    listen 80;
+    server_name nexpo.uy www.nexpo.uy;
+    root /var/www/admin-fair/dist;
+    index index.html;
+
+    location = /soporte { try_files /soporte.html =404; }
+    location = /support { try_files /soporte.html =404; }
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
+
+# App móvil en expobelleza.nexpo.uy
+server {
+    listen 80;
+    server_name expobelleza.nexpo.uy;
+    root /var/www/feria-app;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+
+    location /canvaskit/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+}
+```
+
+Activar y reiniciar:
+
+```bash
+mkdir -p /var/www/feria-app
+ln -sf /etc/nginx/sites-available/nexpo /etc/nginx/sites-enabled/
+rm -f /etc/nginx/sites-enabled/default
+rm -f /etc/nginx/sites-enabled/admin-fair
+nginx -t
+systemctl restart nginx
+```
+
+### 4. HTTPS (Let's Encrypt)
+
+```bash
+apt install -y certbot python3-certbot-nginx
+certbot --nginx -d nexpo.uy -d www.nexpo.uy -d expobelleza.nexpo.uy
+```
+
+---
+
 ## Resumen de URLs
 
 | Recurso | URL |
 |---------|-----|
-| Admin | `http://TU_IP` |
+| Dashboard (admin) | `https://nexpo.uy` |
+| App móvil (Flutter) | `https://expobelleza.nexpo.uy` |
 | API (si está en otro servidor) | `http://TU_IP_API:3000` |
 
 Si API y Admin están en el mismo Droplet, puedes servir el admin en el puerto 80 y la API en el 3000, o configurar Nginx como proxy para ambos.

@@ -310,6 +310,17 @@
   to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
+@media (max-width: 480px) {
+  .dashboard-copy-toast {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0));
+    left: 16px;
+    right: 16px;
+    transform: none;
+    text-align: center;
+    max-width: calc(100% - 32px);
+  }
+}
+
 .dashboard-calendar-days {
   display: flex;
   gap: 12px;
